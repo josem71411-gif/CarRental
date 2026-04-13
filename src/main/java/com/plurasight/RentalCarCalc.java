@@ -48,8 +48,11 @@ public class RentalCarCalc {
     // Output
         System.out.println("/n-- Rental Summary ---");
         System.out.println("Pickup Date: " + pickupDate);
-        System.out.println("Basic Rental Cost: $" + surcharge);
-        System.out.println("Total cost: $" + totalCost);
+
+        System.out.printf("Basic rental cost: $%.2f%n", basicCosts);
+        System.out.printf("Options cost: $%.2f%n", optionsCost);
+        System.out.printf("Underage Surcharge: $%.2f%n", (double)surcharge);
+        System.out.printf("Total Cost: $%.2f%n", totalCost);
 
         scanner.close();
     }
