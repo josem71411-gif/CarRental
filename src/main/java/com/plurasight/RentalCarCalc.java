@@ -40,11 +40,17 @@ public class RentalCarCalc {
     if (gps.equalsIgnoreCase("yes")) {
         optionsCost += days * roadsideRate;
     }
-    Double surcharge = 0;
+    int surcharge = 0;
     if (age < 25) {
-        surcharge = basicCosts * 0.30;
+        surcharge = (int) (basicCosts * 0.30);
     }
     double totalCost = basicCosts + optionsCost + surcharge;
+    // Output
+        System.out.println("/n-- Rental Summary ---");
+        System.out.println("Pickup Date: " + pickupDate);
+        System.out.println("Basic Rental Cost: $" + surcharge);
+        System.out.println("Total cost: $" + totalCost);
 
+        scanner.close();
     }
 }
