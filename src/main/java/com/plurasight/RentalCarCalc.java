@@ -1,4 +1,50 @@
 package com.plurasight;
 
+import java.util.Scanner;
+
 public class RentalCarCalc {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+    // Constants
+        double dailyRate = 29.99;
+        double tollTagRate = 3.95;
+        double gpsRate = 2.95;
+        double roadsideRate = 3.95;
+
+    // User input
+        System.out.print("Enter Pickup date: ");
+        String pickupDate = scanner.nextLine();
+
+        System.out.print("Enter Number Of Rental Days;  ");
+        int days = scanner.nextInt();
+        scanner.nextLine(); // Buffer
+
+        System.out.print("Add Electronic Toll Tag (yes/no)? ");
+        String tollTag = scanner.nextLine();
+
+        System.out.print("Add A GPS (yes/no)?  ");
+        String gps = scanner.nextLine();
+
+        System.out.print("Add RoadSide Assistance? (Yes/No)  ");
+        String roadside = scanner.nextLine();
+        System.out.print("Enter your age:  ");
+        int age = scanner.nextInt();
+
+    // Calculatoins
+    double basicCosts = days * dailyRate;
+    double optionsCost = 0;
+    if (tollTag.equalsIgnoreCase("yes")) {
+        optionsCost += days * tollTagRate;
+        }
+    if (gps.equalsIgnoreCase("yes")) {
+        optionsCost += days * roadsideRate;
+    }
+    Double surcharge = 0;
+    if (age < 25) {
+        surcharge = basicCosts * 0.30;
+    }
+    double totalCost = basicCosts + optionsCost + surcharge;
+
+    }
 }
