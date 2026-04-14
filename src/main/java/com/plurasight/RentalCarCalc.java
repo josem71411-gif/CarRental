@@ -37,8 +37,11 @@ public class RentalCarCalc {
     if (tollTag.equalsIgnoreCase("yes")) {
         optionsCost += days * tollTagRate;
         }
-    if (gps.equalsIgnoreCase("yes")) {
+    if (roadside.equalsIgnoreCase("yes")) {
         optionsCost += days * roadsideRate;
+    }
+    if (gps.equalsIgnoreCase("yes")) {
+        optionsCost += days * gpsRate;
     }
     int surcharge = 0;
     if (age < 25) {
@@ -46,7 +49,7 @@ public class RentalCarCalc {
     }
     double totalCost = basicCosts + optionsCost + surcharge;
     // Output
-        System.out.println("/n-- Rental Summary ---");
+        System.out.println("\n-- Rental Summary ---");
         System.out.println("Pickup Date: " + pickupDate);
 
         System.out.printf("Basic rental cost: $%.2f%n", basicCosts);
