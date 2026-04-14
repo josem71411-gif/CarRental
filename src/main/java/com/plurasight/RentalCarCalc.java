@@ -34,6 +34,7 @@ public class RentalCarCalc {
     // Calculatoins
     double basicCosts = days * dailyRate;
     double optionsCost = 0;
+        
     if (tollTag.equalsIgnoreCase("yes")) {
         optionsCost += days * tollTagRate;
         }
